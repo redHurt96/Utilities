@@ -2,38 +2,41 @@ using UnityEngine;
 using UnityEngine.UI;
 using RH.Utilities.PlayModeLogs.Core;
 
-public class AllLogsCounter : MonoBehaviour
+namespace RH.Utilities.PlayModeLogs.UI
 {
-    [SerializeField] private Text _countText;
-
-    private int _logsCount;
-    private int _warningsCount;
-    private int _errorsCount;
-
-    private void Awake()
+    public class AllLogsCounter : MonoBehaviour
     {
-        LogsList.OnLogRecieved += UpdateCount;
-    }
+        [SerializeField] private Text _countText;
 
-    private void UpdateCount(Log log)
-    {
-        switch (log.Type)
+        private int _logsCount;
+        private int _warningsCount;
+        private int _errorsCount;
+
+        private void Awake()
         {
-            case LogType.Log:
-            case LogType.Assert:
-                _logsCount++;
-                break;
-            case LogType.Warning:
-                _warningsCount++;
-                break;
-            case LogType.Exception:
-            case LogType.Error:
-                _errorsCount++;
-                break;
+            LogsList.OnLogRecieved += UpdateCount;
         }
 
-        _countText.text = $"<color=white>{_logsCount}</color>/" +
-            $"<color=yellow>{_warningsCount}</color>/" +
-            $"<color=red>{_errorsCount}</color>";
+        private void UpdateCount(Log log)
+        {
+            switch (log.Type)
+            {
+                case LogType.Log:
+                case LogType.Assert:
+                    _logsCount++;
+                    break;
+                case LogType.Warning:
+                    _warningsCount++;
+                    break;
+                case LogType.Exception:
+                case LogType.Error:
+                    _errorsCount++;
+                    break;
+            }
+
+            _countText.text = $"<color=white>{_logsCount}</color>/" +
+                $"<color=yellow>{_warningsCount}</color>/" +
+                $"<color=red>{_errorsCount}</color>";
+        }
     }
 }
