@@ -1,6 +1,6 @@
 using System;
 
-namespace RH_Utilities.SingletonAccess
+namespace RH.Utilities.SingletonAccess
 {
     public abstract class Singleton<TSelf> where TSelf : Singleton<TSelf>
     {

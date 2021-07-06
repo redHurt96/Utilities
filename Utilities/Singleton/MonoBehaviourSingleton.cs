@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RH_Utilities.SingletonAccess
+namespace RH.Utilities.SingletonAccess
 {
     public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace RH_Utilities.ResourcesLoading
+namespace RH.Utilities.ResourcesLoading
 {
     public static class ResourcesLoader
     {

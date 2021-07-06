@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace RH_Utilities.Coroutines
+namespace RH.Utilities.Coroutines
 {
     public static class CoroutineLauncher
     {
