@@ -14,7 +14,6 @@ namespace RH.Utilities.PlayModeLogs.UI
 
         private void Awake()
         {
-            new LogsReciever();
             LogsList.OnLogRecieved += PerformOnLogRecieved;
 
             gameObject.SetActive(false);

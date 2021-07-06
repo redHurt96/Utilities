@@ -1,3 +1,4 @@
+using RH.Utilities.PlayModeLogs.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ namespace RH.Utilities.PlayModeLogs.UI
 
         private void Awake()
         {
+            new LogsReciever();
+
             _canvasGroup = GetComponent<CanvasGroup>();
             
             _canvasGroup.alpha = 0f;
