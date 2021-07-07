@@ -50,6 +50,7 @@ namespace RH.Utilities.UI
             else
             {
                 int count = _showedElements.Count;
+
                 for (int i = 0; i < count; i++)
                     Close(() => InvokeIfAllClosed(onDone));
             }

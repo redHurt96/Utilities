@@ -1,7 +1,6 @@
-using RH.Utilities.PlayModeLogs.Core;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using RH.Utilities.PlayModeLogs.Core;
 
 namespace RH.Utilities.PlayModeLogs.UI
 {
