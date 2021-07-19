@@ -6,14 +6,16 @@ namespace RH.Utilities.StateMachine
     public class FinitStateMachine
     {
         public bool Enabled { get; private set; } = true;
-
         public IState CurrentState { get; private set; }
+
         private List<IState> _states;
 
         public void AddStates(IState firstState, params IState[] states)
         {
             CurrentState = firstState;
-            _states = new List<IState>();
+
+            if (_states == null)
+                _states = new List<IState>();
 
             _states.Add(firstState);
             _states.AddRange(states);
@@ -27,8 +29,13 @@ namespace RH.Utilities.StateMachine
             EnterState(newState);
         }
 
-        public void Update() => CurrentState.Update();
-        public void Disable() => Enabled = false;
+        public void Update()
+        {
+            if (Enabled)
+                CurrentState.Update();
+            else
+                throw new Exception("Can't update disabled state machine");
+        }
 
         private void EnterState(IState state)
         {
