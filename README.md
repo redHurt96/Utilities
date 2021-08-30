@@ -1,4 +1,4 @@
-# Utilities_v3
+# Utilities
 
 * Singleton base classes - Singleton<T> / MonobehaviourSingleton<T>
 * ResourcesLoader - враппер на загрузку из ресурсов с проверкой загруженных в память объектов
