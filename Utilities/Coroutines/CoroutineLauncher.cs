@@ -16,8 +16,11 @@ namespace RH.Utilities.Coroutines
             }
         }
 
-        public static void Start(IEnumerator coroutine) => _reciever.StartCoroutine(coroutine);
+        public static Coroutine Start(IEnumerator coroutine) => _reciever.StartCoroutine(coroutine);
+
         public static void Stop(IEnumerator coroutine) => _reciever.StopCoroutine(coroutine);
+        public static void Stop(Coroutine coroutine) => _reciever.StopCoroutine(coroutine);
+
         public static void StopAll() => _reciever.StopAllCoroutines();
 
         private class CoroutinesLauncherReciever : MonoBehaviour { }
