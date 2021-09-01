@@ -21,7 +21,7 @@ namespace RH.Utilities.Processes
         }
         private static SerialProcessExecutor _executor;
 
-        public event Action OnCompleted;
+        public event Action Completed;
 
         private readonly List<ICustomProcess> items = new List<ICustomProcess>();
 
@@ -56,7 +56,7 @@ namespace RH.Utilities.Processes
                 yield return new WaitUntil(() => item.IsComplete);
             }
 
-            OnCompleted?.Invoke();
+            Completed?.Invoke();
         }
 
         private void AddItem(ICustomProcess item) => items.Add(item);

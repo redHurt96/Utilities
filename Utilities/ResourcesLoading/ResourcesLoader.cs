@@ -16,5 +16,13 @@ namespace RH.Utilities.ResourcesLoading
 
         public static T Instantiate<T>(string name, Transform parent = null) where T : Component
             => _resourcesFactory.Instantiate<T>(name, parent);
+
+        public static T Instantiate<T>(string name, Vector3 position, Transform parent = null) where T : Component
+        {
+            T loadedObject = Instantiate<T>(name, parent);
+            loadedObject.transform.position = position;
+
+            return loadedObject;
+        }
     }
 }

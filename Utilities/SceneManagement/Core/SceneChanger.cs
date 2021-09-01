@@ -31,13 +31,13 @@ namespace RH.Utilities.SceneManagement.Core
             _changeProcess.AddAsyncMethod(ChangeScene);
             _changeProcess.AddMultiItem(OnAfterSceneChangedChain);
 
-            _changeProcess.OnCompleted += _changeProcess.Restart;
+            _changeProcess.Completed += _changeProcess.Restart;
             Application.quitting += Dispose;
         }
         
         private static void Dispose()
         {
-            _changeProcess.OnCompleted -= _changeProcess.Restart;
+            _changeProcess.Completed -= _changeProcess.Restart;
             Application.quitting -= Dispose;
         }
 
