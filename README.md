@@ -7,7 +7,7 @@
 * Processes - последовательное / параллельное выполнение синхронных / асинхронных процессов
 * Coroutines - запуск корутин не из MonoBehaviour
 * StateMachine
-* ReadOnlyAttribute - сериализованная Unity поле показано в инспекторе, но закрыто для редактирования. Найдено [здесь] (https://answers.unity.com/questions/489942/how-to-make-a-readonly-property-in-inspector.html)
+* ReadOnlyAttribute - сериализованная Unity поле показано в инспекторе, но закрыто для редактирования. Найдено [здесь](https://answers.unity.com/questions/489942/how-to-make-a-readonly-property-in-inspector.html)
 
 ## Как установить утилиты сабмодулем к другому репозиторию
   1. Открыть репозиторий, в который нужно импортировать утилиты, в командной строке.
